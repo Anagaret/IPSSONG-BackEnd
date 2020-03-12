@@ -1,7 +1,7 @@
 const Comment = require('../models/commentModel');
 
-exports.list_all_post_comments = (req, res) => {
-  Comment.find({post_id: req.params.post_id}, (error, comments) => {
+exports.list_all_song_comments = (req, res) => {
+  Comment.find({song_id: req.params.song_id}, (error, comments) => {
     if(error){
       res.status(500);
       console.log(error);
@@ -16,7 +16,7 @@ exports.list_all_post_comments = (req, res) => {
 
 exports.create_a_comment = (req, res) => {
   let new_comment = new Comment(req.body);
-  new_comment.post_id = req.params.post_id;
+  new_comment.post_id = req.params.song_id;
 
   new_comment.save((error, comment) => {
     if(error){
@@ -32,7 +32,6 @@ exports.create_a_comment = (req, res) => {
 }
 
 exports.get_a_comment = (req, res) => {
-  // Post.findOne({_id : req.params.comment_id}, (error, posts) => {
   Comment.findById(req.params.comment_id, (error, comment) => {
     if(error){
       res.status(500);
