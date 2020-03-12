@@ -14,7 +14,7 @@ let commentSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  post_id: {
+  song_id: {
     type: String
   }
 });

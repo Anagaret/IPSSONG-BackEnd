@@ -5,7 +5,7 @@ const hostname = '0.0.0.0';
 const port = 3000;
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://mongo/apinodeipssi');
+mongoose.connect('mongodb://mongo/ipssong');
 
 const bodyParser = require('body-parser');
 server.use(bodyParser.urlencoded());
@@ -14,8 +14,8 @@ server.use(bodyParser.json());
 const cors = require('cors');
 server.use(cors());
 
-const postRoute = require('./api/routes/postRoute');
-postRoute(server);
+const songRoute = require('./api/routes/songRoute');
+songRoute(server);
 
 const commentRoute = require('./api/routes/commentRoute');
 commentRoute(server);
