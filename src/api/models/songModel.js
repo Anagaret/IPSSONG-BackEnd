@@ -22,7 +22,7 @@ let songSchema = new Schema({
     type: Number,
     default: 0
   },
-  Date: {
+  date: {
     type: Date,
     default: Date.now
   }

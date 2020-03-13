@@ -81,3 +81,19 @@ exports.delete_a_song = (req, res) => {
     }
   })
 };
+
+exports.get_top_six_song = (req, res) => {
+  Song.find({}, (error, song) => {
+    if(error){
+      res.status(501);
+      console.log(error);
+      res.json({message: "Erreur serveur."});
+    }
+    else{
+      res.status(200);
+      res.json(song);
+    }
+  }).sort(
+      {vote_plus : -1}
+      ).limit(6)
+};
