@@ -2,8 +2,7 @@ module.exports = (server) => {
   const songController = require('../controllers/songController');
 
   server.route('/songs')
-  .get(songController.get_top_six_song)
-  //.get(songController.list_all_song)
+  .get(songController.list_all_song)
   .post(songController.create_a_song);
 
  server.route('/songs/:song_id') // req.params.song_id
