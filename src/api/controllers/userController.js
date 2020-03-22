@@ -14,12 +14,12 @@ exports.get_all_user = (req, res) => {
   })
 };
 
-exports.create_one_user = (req, res) => {
+exports.create_a_user = (req, res) => {
   let new_user = new user(req.body);
   new_user.save((error, user) => {
     if(error){
       res.status(500);
-      console.log(error);
+      console.log("a");
       res.json({message: "Erreur serveur."});
     }
     else{
@@ -29,7 +29,7 @@ exports.create_one_user = (req, res) => {
   })
 };
 
-exports.get_one_user = (req, res) => {
+exports.get_a_user = (req, res) => {
   let {user_id} = req.params;
   user.findById(user_id, (error, user) => {
     if(error){
