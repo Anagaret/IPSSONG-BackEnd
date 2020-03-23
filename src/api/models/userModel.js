@@ -14,6 +14,10 @@ let userSchema = new Schema({
     type: String,
     required: "Le mot de passe est requis"
   },
+  email:{
+    type: String,
+    required: "L'email est requis"
+  }
   classe: {
     type: String,
     required: "La classe est obligatoire"

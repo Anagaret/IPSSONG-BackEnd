@@ -14,6 +14,21 @@ exports.get_all_user = (req, res) => {
   })
 };
 
+exports.connection = (req, res) => {
+  let email = req.params.mail;
+  user.findOne({email : email}, (error, user) => {
+    if(error){
+      res.status(500);
+      console.log(error);
+      res.json({message: "Erreur serveur."});
+    }
+    else{
+      res.status(200);
+      res.json(user);
+    }
+  })
+};
+
 exports.create_a_user = (req, res) => {
   let new_user = new user(req.body);
   new_user.save((error, user) => {
