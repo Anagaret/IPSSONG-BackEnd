@@ -18,10 +18,6 @@ let userSchema = new Schema({
     type: String,
     required: "La classe est obligatoire"
   },
-  type: {
-    type: Number,
-    default: 0
-  },
   date: {
     type: Date,
     default: Date.now

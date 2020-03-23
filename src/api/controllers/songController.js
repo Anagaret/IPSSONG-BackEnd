@@ -48,6 +48,8 @@ exports.get_a_song = (req, res) => {
   })
 }
 
+
+// A modifier lorsque le front sera MAJ
 exports.set_a_song = (req, res) => {
   let {song_id} = req.params;
   Song.findOne({_id : song_id}, (erreur, song) => {
