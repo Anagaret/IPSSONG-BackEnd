@@ -20,4 +20,10 @@ songRoute(server);
 const commentRoute = require('./api/routes/commentRoute');
 commentRoute(server);
 
+const voteRoute = require('./api/routes/voteRoute');
+voteRoute(server);
+
+const userRoute = require('./api/routes/userRoute');
+userRoute(server);
+
 server.listen(port, hostname);

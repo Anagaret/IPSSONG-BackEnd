@@ -14,11 +14,11 @@ let songSchema = new Schema({
     type: String,
     required: "Le lien est obligatoire"
   },
-  vote_plus: {
+  vote_plus: { // A modifier lorsque le front sera MAJ
     type: Number,
     default: 0
   },
-  vote_moins: {
+  vote_moins: { // A modifier lorsque le front sera MAJ
     type: Number,
     default: 0
   },

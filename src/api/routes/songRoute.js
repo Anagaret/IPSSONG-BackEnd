@@ -9,10 +9,11 @@ module.exports = (server) => {
  .get(songController.get_a_song)
  .delete(songController.delete_a_song);
 
+ server.route('/top/songs')
+ .get(songController.get_top_six_song);
+
+// A modifier lorsque le front sera MAJ
  server.route('/songs/:song_id/:vote')
  .put(songController.set_a_song);
 
- server.route('/top/songs')
- .get(songController.get_top_six_song);
 }
-

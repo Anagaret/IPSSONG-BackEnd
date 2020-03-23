@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let voteSchema = new Schema({
-  id_user: {
+  user_id: {
     type: String,
     required: "Veuillez renseigner votre nom d'utilisateur"
   },
@@ -12,7 +12,7 @@ let voteSchema = new Schema({
   },
   vote: {
     type: Boolean,
-  },
+  }
 });
 
 module.exports = mongoose.model('Vote', voteSchema);
